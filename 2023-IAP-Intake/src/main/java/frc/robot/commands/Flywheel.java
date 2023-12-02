@@ -4,27 +4,33 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.Intake;
 
 public class Flywheel extends CommandBase {
-  /** Creates a new Flywheel. */
-  public Flywheel() {
-    // Use addRequirements() here to declare subsystem dependencies.
-  }
-
-  // Called when the command is initially scheduled.
+   private final Intake intake;
+   private final Joystick joy;
+   
+   public Flywheel(Intake intake, Joystick joy)
+   {
+     this.intake = intake;
+     this.joy = joy;
+     addRequirements(intake);
+   }
+ 
   @Override
   public void initialize() {}
 
-  // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    intake.setFlywheelPower(-joy.getRawAxis(3)); //literally sets the flywheel speed to the y axis (which is 3 on the xbox ctrl)
+  }
 
-  // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {}
 
-  // Returns true when the command should end.
   @Override
   public boolean isFinished() {
     return false;

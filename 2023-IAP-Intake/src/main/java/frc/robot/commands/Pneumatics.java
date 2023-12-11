@@ -23,12 +23,12 @@ public class Pneumatics extends CommandBase {
   public void execute() {
     if(RobotContainer.getJoy().getRawButtonPressed(Constants.Buttons.Forward))
     {
-      Intake.getDoubleSolenoid().set(kForward);
+      Intake.setDoubleSolenoid(kForward);
       
     }
     if(RobotContainer.getJoy().getRawButtonPressed(Constants.Buttons.Reverse))
     {
-      Intake.getDoubleSolenoid().set(kReverse);
+      Intake.setDoubleSolenoid(kReverse);
       
     }
     if(RobotContainer.getJoy().getRawButtonPressed(Constants.Buttons.Off))

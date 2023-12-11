@@ -25,7 +25,7 @@ public class Flywheel extends CommandBase {
 
   @Override
   public void execute() {
-    intake.setFlywheelPower(-joy.getRawAxis(3)); //literally sets the flywheel speed to the y axis (which is 3 on the xbox ctrl)
+    intake.setFlywheelPower(-joy.getRawAxis(3)); //sets the flywheel speed to the movement of joystick
   }
 
   @Override

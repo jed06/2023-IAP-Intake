@@ -33,6 +33,5 @@ public class Constants {
         public static final int Forward = 3; // orange button on x box ctrl
         public static final int Reverse = 1; // green button on x box ctrl
         public static final int Off = 2; // red button on x box ctrl
-        // look at x box controller button map if ur still confused 
     }
 }

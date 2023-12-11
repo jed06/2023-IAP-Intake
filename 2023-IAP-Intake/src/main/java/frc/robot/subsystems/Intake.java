@@ -16,6 +16,8 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.InvertType;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import static edu.wpi.first.wpilibj.DoubleSolenoid.Value.*;
+
 
 public class Intake extends SubsystemBase {
 
@@ -55,6 +57,10 @@ public class Intake extends SubsystemBase {
     // Method to set the power of the flywheel motor controller
     public void setFlywheelPower(double speed) {
       FlyWheelTalon.set(ControlMode.PercentOutput, speed);
+    }
+
+    public static void setDoubleSolenoid(DoubleSolenoid.Value Kvalue) {
+      doubleSolenoid.set(Kvalue);
     }
   
     // Method to retrieve the current drawn by the flywheel motor controller
